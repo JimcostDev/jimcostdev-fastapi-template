@@ -50,13 +50,13 @@ Es importante aclarar que esta plantilla ha sido creada bajo mis gustos y prefer
     - Modo **desarrollo**:
 
         ```bash
-        uvicorn main:app --reload
+        fastapi dev main.py
         ```
 
     - Modo **producción**:
 
         ```bash
-        uvicorn main:app
+        fastapi run
         ```
 
 6. **Actualizar versión de FastAPI** (opcional):
