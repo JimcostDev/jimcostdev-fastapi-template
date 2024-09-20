@@ -71,5 +71,5 @@ Es importante aclarar que esta plantilla ha sido creada bajo mis gustos y prefer
     pip install "fastapi[standard]"
     pip install pymongo
     ```
-
-#
+## Uso del Template en GitHub
+Además, como es un template de GitHub, también puedes utilizarlo haciendo clic en el botón correspondiente para crear un nuevo repositorio basado en esta plantilla.
