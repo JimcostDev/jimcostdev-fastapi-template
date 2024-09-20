@@ -3,6 +3,8 @@ Esta plantilla está diseñada para trabajar con **FastAPI** y **MongoDB**. Prop
 
 Es importante aclarar que esta plantilla ha sido creada bajo mis gustos y preferencias personales (JimcostDev). No asegura que siga las mejores prácticas ni que sea el enfoque correcto para todos los proyectos. Sin embargo, puede ser útil como punto de partida o referencia.
 
+> !Si te resulta útil este proyecto, apóyalo con una ⭐! Tu apoyo nos motiva a crear más contenido y mejorar los recursos disponibles. ¡Gracias! :octocat:
+
 ## Instrucciones de Uso
 
 1. **Clona este repositorio** ejecutando el siguiente comando:
