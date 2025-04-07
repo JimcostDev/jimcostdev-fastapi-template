@@ -2,6 +2,7 @@ from motor.motor_asyncio import AsyncIOMotorCollection
 from bson import ObjectId, errors
 from exceptions import NotFoundException, DatabaseException
 
+
 class BaseRepository:
     def __init__(self, collection: AsyncIOMotorCollection):
         self.collection = collection
@@ -11,6 +12,17 @@ class BaseRepository:
             return ObjectId(id)
         except errors.InvalidId:
             raise NotFoundException("ID inválido")
+
+    async def find_all(self):
+        try:
+            cursor = self.collection.find()
+            documents = []
+            async for document in cursor:
+                document["_id"] = str(document["_id"])
+                documents.append(document)
+            return documents
+        except Exception as e:
+            raise DatabaseException(f"Error al obtener documentos: {str(e)}")
 
     async def find_by_id(self, id: str):
         try:
@@ -24,6 +36,13 @@ class BaseRepository:
             raise  # Propaga la excepción directamente
         except Exception as e:
             raise DatabaseException(f"Error de base de datos: {str(e)}")
+
+    async def create(self, data: dict):
+        try:
+            result = await self.collection.insert_one(data)
+            return await self.find_by_id(str(result.inserted_id))
+        except Exception as e:
+            raise DatabaseException(f"Error al crear documento: {str(e)}")
 
     async def update(self, id: str, update_data: dict):
         try:
