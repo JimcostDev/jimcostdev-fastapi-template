@@ -71,7 +71,7 @@ Es importante aclarar que esta plantilla ha sido creada bajo mis gustos y prefer
 7. **Instalar dependencias individuales** (opcional):
 
     ```bash
-    pip install "fastapi[standard]" motor pytest pytest-asyncio pydantic-setting
+    pip install "fastapi[standard]" motor pytest pytest-asyncio pydantic-settings
     ```
 8. **Documentación** [FastAPI:](https://fastapi.tiangolo.com/#requirements)
 ## Uso del Template en GitHub
