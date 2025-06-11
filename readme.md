@@ -83,12 +83,9 @@ JWT_SECRET_KEY=secreto-muy-secreto
     ```bash
     pip install --upgrade fastapi
     ```
-
-7. **Instalar dependencias individuales** (opcional):
-
-    ```bash
-    pip install "fastapi[standard]" motor pymongo pytest pytest-asyncio pydantic-settings aiobcrypt python-jose
-    ```
-8. **Documentación** [FastAPI:](https://fastapi.tiangolo.com/#requirements)
+6. **Documentación** [FastAPI:](https://fastapi.tiangolo.com/#requirements)
    
 
+> [!TIP] 
+> !Si te resulta útil este proyecto, apóyalo con una ⭐! Tu apoyo nos motiva a crear más contenido y mejorar los recursos disponibles. ¡Gracias! :octocat:
+   
