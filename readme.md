@@ -1,10 +1,22 @@
-# FastAPI MongoDB Template
-Esta plantilla está diseñada para trabajar con **FastAPI** y **MongoDB**. Proporciona una estructura de carpetas organizada y funcional para acelerar el desarrollo de nuevos proyectos. 
+# FastAPI + MongoDB Template
+Plantilla inicial para proyectos web con FastAPI y MongoDB, pensada para acelerar el desarrollo y servir de referencia. 
 
-Es importante aclarar que esta plantilla ha sido creada bajo mis gustos y preferencias personales (JimcostDev). No asegura que siga las mejores prácticas ni que sea el enfoque correcto para todos los proyectos. Sin embargo, puede ser útil como punto de partida o referencia.
+> [!NOTE]
+> Esta plantilla refleja MIS preferencias (JimcostDev). No garantiza que cubra todas las mejores prácticas, pero puede ser un excelente punto de partida.
+
+> [!INFO]
+> Además, como es un template de GitHub, también puedes utilizarlo haciendo clic en el botón correspondiente para crear un nuevo repositorio basado en esta plantilla.
 
 > [!TIP] 
 > !Si te resulta útil este proyecto, apóyalo con una ⭐! Tu apoyo nos motiva a crear más contenido y mejorar los recursos disponibles. ¡Gracias! :octocat:
+
+## 📋 Características
+- Estructura de carpetas organizada
+- Conexión asíncrona a MongoDB con motor
+- Configuración mediante variables de entorno con pydantic-settings
+- Hashing de contraseñas con bcrypt (o aiobcrypt)
+- Autenticación basada en JWT con python-jose
+- Suite de tests con pytest y pytest-asyncio
 
 ## Instrucciones de Uso
 
@@ -44,7 +56,12 @@ Es importante aclarar que esta plantilla ha sido creada bajo mis gustos y prefer
 
 4. **Configura la conexión a MongoDB**:
 
-    Asegúrate de configurar correctamente la conexión a MongoDB en el archivo `core/cofig.env`. Puedes utilizar variables de entorno para las credenciales y la URL de MongoDB.
+    Asegúrate de configurar correctamente la conexión a MongoDB en el archivo `core/cofig.env`. Puedes utilizar variables de entorno para las credenciales y la URL de MongoDB. Por ejemplo:
+     ```bash
+    MONGODB_URI_DEV_LAB_TEST=mongodb+srv://user:password@server/
+    MONGODB_NAME=db_name
+    JWT_SECRET_KEY=secreto-muy-secreto
+    ```
 
 5. **Ejecuta el servidor**:
 
@@ -71,8 +88,8 @@ Es importante aclarar que esta plantilla ha sido creada bajo mis gustos y prefer
 7. **Instalar dependencias individuales** (opcional):
 
     ```bash
-    pip install "fastapi[standard]" motor pytest pytest-asyncio pydantic-settings
+    pip install "fastapi[standard]" motor pymongo pytest pytest-asyncio pydantic-settings aiobcrypt python-jose
     ```
 8. **Documentación** [FastAPI:](https://fastapi.tiangolo.com/#requirements)
-## Uso del Template en GitHub
-Además, como es un template de GitHub, también puedes utilizarlo haciendo clic en el botón correspondiente para crear un nuevo repositorio basado en esta plantilla.
+   
+
