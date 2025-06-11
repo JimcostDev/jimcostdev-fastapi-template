@@ -2,13 +2,10 @@
 Plantilla inicial para proyectos web con FastAPI y MongoDB, pensada para acelerar el desarrollo y servir de referencia. 
 
 > [!NOTE]
-> Esta plantilla refleja MIS preferencias (JimcostDev). No garantiza que cubra todas las mejores prácticas, pero puede ser un excelente punto de partida.
+> Esta plantilla refleja mis preferencias (JimcostDev). No garantiza que cubra todas las mejores prácticas, pero puede ser un excelente punto de partida.
 
-> [!INFO]
+> [!TIP]
 > Además, como es un template de GitHub, también puedes utilizarlo haciendo clic en el botón correspondiente para crear un nuevo repositorio basado en esta plantilla.
-
-> [!TIP] 
-> !Si te resulta útil este proyecto, apóyalo con una ⭐! Tu apoyo nos motiva a crear más contenido y mejorar los recursos disponibles. ¡Gracias! :octocat:
 
 ## 📋 Características
 - Estructura de carpetas organizada
@@ -49,47 +46,45 @@ Plantilla inicial para proyectos web con FastAPI y MongoDB, pensada para acelera
             ```
 
 3. **Instala las dependencias requeridas**:
+    - Instalar todas con `requirements.txt`:
+        ```bash
+        pip install -r requirements.txt
+        ```
+    - Instalar dependencias individuales (opcional):
+        ```bash
+        pip install "fastapi[standard]" motor pymongo pytest pytest-asyncio pydantic-settings aiobcrypt python-jose
+        ```
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+> [!IMPORTANT]
+> **Configura la conexión a MongoDB:**
+> Asegúrate de configurar correctamente la conexión a MongoDB en el archivo `core/cofig.env`. Puedes utilizar variables de entorno para las credenciales y la URL de MongoDB. Por ejemplo:
 
-4. **Configura la conexión a MongoDB**:
+```sh
+MONGODB_URI_DEV_LAB_TEST=mongodb+srv://user:password@server/
+MONGODB_NAME=db_name
+JWT_SECRET_KEY=secreto-muy-secreto
+```
 
-    Asegúrate de configurar correctamente la conexión a MongoDB en el archivo `core/cofig.env`. Puedes utilizar variables de entorno para las credenciales y la URL de MongoDB. Por ejemplo:
-     ```bash
-    MONGODB_URI_DEV_LAB_TEST=mongodb+srv://user:password@server/
-    MONGODB_NAME=db_name
-    JWT_SECRET_KEY=secreto-muy-secreto
-    ```
-
-5. **Ejecuta el servidor**:
+4. **Ejecuta el servidor**:
 
     Inicia el servidor en modo de desarrollo o producción:
 
     - Modo **desarrollo**:
-
         ```bash
         fastapi dev main.py
         ```
 
     - Modo **producción**:
-
         ```bash
         fastapi run
         ```
 
-6. **Actualizar versión de FastAPI** (opcional):
-
+5. **Actualizar versión de FastAPI** (opcional):
     ```bash
     pip install --upgrade fastapi
-    ```
+  
+6. **Documentación** [FastAPI:](https://fastapi.tiangolo.com/#requirements)
 
-7. **Instalar dependencias individuales** (opcional):
-
-    ```bash
-    pip install "fastapi[standard]" motor pymongo pytest pytest-asyncio pydantic-settings aiobcrypt python-jose
-    ```
-8. **Documentación** [FastAPI:](https://fastapi.tiangolo.com/#requirements)
+> [!TIP] 
+> !Si te resulta útil este proyecto, apóyalo con una ⭐! Tu apoyo nos motiva a crear más contenido y mejorar los recursos disponibles. ¡Gracias! :octocat:
    
-
