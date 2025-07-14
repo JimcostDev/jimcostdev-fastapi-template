@@ -1,8 +1,8 @@
-fastapi[standard]==0.115.12
-motor==3.7.0
-pytest==8.3.5
-pydantic-settings==2.8.1
-pytest-asyncio==0.26.0
-pymongo==4.13.0
-aiobcrypt==3.2.0.post1
-python-jose==3.4.0
+fastapi[standard]
+motor
+pytest
+pydantic-settings
+pytest-asyncio
+pymongo
+aiobcrypt
+python-jose
