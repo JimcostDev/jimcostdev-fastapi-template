@@ -38,7 +38,7 @@ El proyecto sigue una **arquitectura en capas** para promover la separación de 
 1. **Clona este repositorio** ejecutando el siguiente comando:
 
     ```bash
-    git clone https://github.com/JimcostDev/fastapi-mongo-template.git
+    git clone https://github.com/JimcostDev/jimcostdev-fastapi-template.git
     ```
 
 2. **Crea y activa tu entorno virtual**:
