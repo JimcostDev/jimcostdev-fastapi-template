@@ -1,10 +1,11 @@
 # FastAPI + MongoDB + PostgreSQL Template
-Plantilla inicial para proyectos web con FastAPI, MongoDB y PostgreSQL, pensada para acelerar el desarrollo y servir de referencia. 
 
-> [!NOTE]  
+Plantilla inicial para proyectos web con FastAPI, MongoDB y PostgreSQL, pensada para acelerar el desarrollo y servir de referencia.
+
+> [!NOTE]
 > Esta plantilla refleja mis preferencias (JimcostDev). No garantiza que cubra todas las mejores prácticas, pero puede ser un excelente punto de partida.
 
-> [!TIP]  
+> [!TIP]
 > Además, como es un template de GitHub, también puedes utilizarlo haciendo clic en el botón correspondiente para crear un nuevo repositorio basado en esta plantilla.
 
 ## 📋 Características
@@ -15,6 +16,22 @@ Plantilla inicial para proyectos web con FastAPI, MongoDB y PostgreSQL, pensada 
 - Hashing de contraseñas con `bcrypt` (o `aiobcrypt`)
 - Autenticación basada en JWT con `python-jose`
 - Suite de tests con `pytest` y `pytest-asyncio`
+
+---
+
+## 🏗️ Estructura del Proyecto
+
+El proyecto sigue una **arquitectura en capas** para promover la separación de responsabilidades y facilitar la mantenibilidad y escalabilidad.
+
+- **`api/`**: Contiene los **controladores** (`routers`). Cada archivo en esta carpeta define los endpoints de la API para una entidad o un conjunto de funcionalidades, manejando las solicitudes HTTP y devolviendo las respuestas.
+- **`services/`**: Aquí reside la **lógica de negocio**. Los servicios orquestan las operaciones, validan los datos y utilizan los repositorios para interactuar con la capa de persistencia.
+- **`repositories/`**: Implementa el **patrón Repositorio**. Esta capa es la encargada de la lógica de acceso a datos, abstrayendo la interacción con la base de datos (ya sea MongoDB o PostgreSQL) del resto de la aplicación.
+- **`models/`**: Define los **modelos de datos** para las entidades de la aplicación. Aquí se establecen las estructuras de datos y se utilizan para la validación y el mapeo de objetos.
+- **`core/`**: Incluye la **configuración** principal, como las variables de entorno, la inicialización de la base de datos y otras configuraciones globales del proyecto.
+- **`tests/`**: Contiene la suite de pruebas unitarias y de integración con `pytest`, asegurando el correcto funcionamiento de la API.
+- **`utils/`**: Almacena **funciones de utilidad** y clases auxiliares que pueden ser reutilizadas en diferentes partes del proyecto.
+
+---
 
 ## 🚀 Instrucciones de Uso
 
