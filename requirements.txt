@@ -6,3 +6,7 @@ pytest-asyncio
 pymongo
 aiobcrypt
 python-jose
+sqlmodel 
+sqlalchemy 
+asyncpg 
+alembic

@@ -3,27 +3,26 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from core.config import settings
-from core.database import mongodb 
+from core.database import db 
 
 # Importar routers de los endpoints
 from api.endpoints.ok import router as ok_router
 
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Inicialización de la conexión a MongoDB
+    # Inicialización conexión según DB_ENGINE (Mongo o Postgres)
     try:
-        await mongodb.connect()
-        print("✅ Conexión a MongoDB establecida correctamente")
+        await db.connect()
+        print("✅ Conexión a la base de datos establecida correctamente")
     except Exception as e:
-        print(f"❌ Error fatal de conexión a MongoDB: {str(e)}")
+        print(f"❌ Error fatal de conexión a la base de datos: {str(e)}")
         raise RuntimeError("No se pudo iniciar la aplicación - Error de base de datos") from e
-        
-    yield  # La aplicación se ejecuta aquí
-        
-    # Cierre de la conexión al finalizar
-    await mongodb.disconnect()
-    print("🔌 Conexión a MongoDB cerrada")
+
+    yield
+
+    # Cierre
+    await db.disconnect()
+    print("🔌 Conexión a la base de datos cerrada")
 
 app = FastAPI(
     lifespan=lifespan,
@@ -35,7 +34,7 @@ app = FastAPI(
     redoc_url="/redoc"
 )
 
-# Configuración de CORS
+# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.CORS_ORIGINS,
@@ -44,8 +43,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Registrar routers
+# Routers
 app.include_router(ok_router, prefix=settings.API_PREFIX, tags=["ok"])
 
-# Archivos estáticos
+# Static files
 app.mount("/static", StaticFiles(directory="assets"), name="static")
