@@ -3,7 +3,7 @@ from bson import ObjectId, errors
 from exceptions import NotFoundException, DatabaseException
 
 
-class BaseRepository:
+class BaseRepositoryMD:
     def __init__(self, collection: AsyncIOMotorCollection):
         self.collection = collection
 
