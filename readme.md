@@ -93,9 +93,10 @@ MONGODB_NAME=db_name
 POSTGRES_URI=postgresql+asyncpg://user:password@localhost:5432/db_name
 ```
 
-### ⚙️ Configuración JWT
+### ⚙️ Otros
 
 ```sh
+DB_ENGINE=postgresql/mongodb # elegir motor
 JWT_SECRET_KEY=secreto-muy-secreto
 ```
 
